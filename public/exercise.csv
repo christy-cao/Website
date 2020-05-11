@@ -1,0 +1,47 @@
+LocationAbbr,Class,Short_Desc,Data_Value
+alabama,Physical Activity,NoExercise,31.9
+arkansas,Physical Activity,Aerobic,45.1
+arizona,Physical Activity,HighAerobic,33.4
+california,Physical Activity,Aerobic,57.3
+colorado,Physical Activity,Aerobic,60.6
+connecticut,Physical Activity,HighAerobic,33.7
+delaware,Physical Activity,Strength,30.5
+florida,Physical Activity,Aerobic+Strength,21.7
+georgia,Physical Activity,HighAerobic,30.7
+iowa,Physical Activity,Strength,29.8
+idaho,Physical Activity,Aerobic,55.3
+illinois,Physical Activity,Strength,31.5
+indiana,Physical Activity,Aerobic,44.1
+kansas,Physical Activity,HighAerobic,30.2
+louisiana,Physical Activity,NoExercise,31.9
+massachusetts,Physical Activity,Strength,31.5
+maryland,Physical Activity,Strength,32.7
+maine,Physical Activity,Aerobic,53.9
+michigan,Physical Activity,HighAerobic,33.4
+minnesota,Physical Activity,HighAerobic,33.7
+missouri,Physical Activity,Aerobic,50.5
+mississippi,Physical Activity,NoExercise,36.8
+montana,Physical Activity,HighAerobic,40.1
+north carolina,Physical Activity,Aerobic,48.1
+north dakota,Physical Activity,Aerobic,47
+nebraska,Physical Activity,Strength,31.2
+new hampshire,Physical Activity,HighAerobic,37.3
+new jersey,Physical Activity,Aerobic,48.9
+new mexico,Physical Activity,Aerobic+Strength,23.5
+nevada,Physical Activity,HighAerobic,36.6
+new york,Physical Activity,Aerobic,47.1
+ohio,Physical Activity,HighAerobic,32.2
+oklahoma,Physical Activity,NoExercise,33.2
+oregon,Physical Activity,Aerobic,60.4
+pennsylvania,Physical Activity,HighAerobic,31.1
+rhode island,Physical Activity,Aerobic,50.4
+south carolina,Physical Activity,HighAerobic,31.4
+south dakota,Physical Activity,HighAerobic,32.5
+tennessee,Physical Activity,Aerobic,45.4
+texas,Physical Activity,Aerobic,44.3
+utah,Physical Activity,Aerobic+Strength,24.8
+virginia,Physical Activity,Strength,32.3
+washington,Physical Activity,HighAerobic,37.9
+wisconsin,Physical Activity,Aerobic,56.8
+west virginia,Physical Activity,NoExercise,30.8
+wyoming,Physical Activity,Strength,32.1

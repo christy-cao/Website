@@ -1,0 +1,182 @@
+---
+title: "Project 1"
+author: "Christy Cao"
+date: "3/15/2020"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+**Introduction**
+
+  For this project, I will be analyzing the number of arrests for violent crimes and poverty percentage of each of the US states. Because laws and regulations can have a large impact on the safety and status of living of a state, I decided to include the major political party of each state. The examination of these variables can depict any differences/ correlations between Republican vs Democrat states in relation to the violent crimes and poverty percentages. With this information, we can generalize the protection from crime each state provides, and the general quality of living of each state through it's crime rates and poverty percentages. We can go on to find out which state is potentially the safest/ most dangerous to live in and have a general idea of the representation of each state. I found all datasets online/ Google.
+
+```{r}
+#Data sets
+#Data set #1: Violent Crime Rates by US State
+library(readr)
+crime <- read_csv("USArrests.csv")
+head(crime)
+#Data set #2: Road Accident Deaths in US States
+pov <- read_csv("est18ustheOne.csv", 
+    skip = 1)
+head(pov)
+#Data set #3: Political party of each state 
+library(readr)
+pol <- read_csv("stateparty.csv", 
+    col_types = cols(`Political Party` = col_character(), 
+        State = col_character()))
+head(pol)
+```
+
+**Tidying / Joining **
+
+  To begin working with the datasets I was interested in, I had to combine the 3 different datasets into one. After doing so, I was able to untidy/ tidy the dataset to show my understanding.
+
+```{R}
+#Tidying / Joining
+library(dplyr)
+library(tidyverse)
+crime<-crime%>%select(-UrbanPop)
+pov<-pov%>%select("Name", "Poverty Percent, All Ages")
+merged1<-full_join(crime,pov, by=c("State"="Name"))
+glimpse(merged1)
+merged<-full_join(merged1, pol, by=c("State"="State"))
+glimpse(merged)
+#Untidying my dataset 
+merged_untidy<-merged%>%pivot_longer(c("Murder","Assault","Rape"),names_to="Type",values_to="Arrests")
+glimpse(merged_untidy)
+merged_tidy<-merged_untidy%>%pivot_wider(names_from="Type",values_from="Arrests")
+glimpse(merged_tidy)
+
+```
+
+  I selected the specific columns that I wanted in each dataset and did not select extra columns that were not needed (i.e., pov had NAs due to it being imported from excel, Urbanpop was deleted). Then, I successfully joined all three of my datasets and named it "merged". The final dataset had the following variables: State, Murder, Assault, Rape, Poverty Percent, and Political Party. Afterwards, because my dataset was already tidy, I made them untidy and tidy per the instructions. I made my merged dataset longer by categorizing each crime under "Type" with its corresponding numerical value of amount of arrests under the column "Arrests". Thus, the dataset became longer as each state had 3 types of crime (murder, assault, rape) with their corresponding amount of arrests. I then made my dataset back to its original by using pivot wider. When joining, I wanted to use all the variables of each dataset, so using full join was in my best interest. I used full join because each dataset had a similar variable (States) that allowed for me to join them all together without dropping any variables.
+
+
+
+**Wrangling**
+```{r}
+#Wrangling
+
+#returns greatest to least states where arrests for assaults are from 250-350
+merged%>%filter(between(Assault,250,350))%>%arrange(desc(Assault))
+#returns the lowest to greatest level of poverty for Republican states
+merged%>%select(State, `Political Party`, `Poverty Percent, All Ages`) %>% filter(`Political Party`=="Republican") %>%arrange(`Poverty Percent, All Ages`)
+#returns the lowest to greatest level of poverty for Democrat states
+merged%>%select(State, `Political Party`, `Poverty Percent, All Ages`) %>% filter(`Political Party`=="Democrat") %>%arrange(`Poverty Percent, All Ages`)
+#returns the lowest levels to highest levels of arrests for each crime in the US states
+merged_untidy%>%filter(Type=="Murder")%>%arrange(Arrests)
+merged%>%arrange(Murder)
+merged_untidy%>%filter(Type=="Assault")%>%arrange(Arrests)
+merged%>%arrange(Assault)
+merged_untidy%>%filter(Type=="Rape")%>%arrange(Arrests)
+merged%>%arrange(Rape)
+
+#mutate - averaged the total arrests for total crime and made a new variable to the dataset
+merged_total<- merged%>%mutate(average_arrest=(Murder+Rape+Assault)/3)
+head(merged_total)
+#shows the mean, sd, and var of poverty levels for the Republican States 
+merged%>%filter(`Political Party`=="Republican")%>%summarize(mean_pov_republic=mean(`Poverty Percent, All Ages`), sd_pov_republic=sd(`Poverty Percent, All Ages`),var_pov_republic=var(`Poverty Percent, All Ages`))
+#shows the mean, sd, and var of poverty levels for the Democrat States 
+merged%>%filter(`Political Party`=="Democrat")%>%summarize(mean_pov_democrat=mean(`Poverty Percent, All Ages`), sd_pov_democrat=sd(`Poverty Percent, All Ages`), var_pov_democart=var(`Poverty Percent, All Ages`))
+
+#summary stats over total poverty levels and total arrests for murder, assault, and rape in the US
+merged%>%summarize(mean_murder=mean(Murder), sd_murder=sd(Murder), var_murder=var(Murder), mean_assault=mean(Assault), sd_assault=sd(Assault), var_assault=var(Assault), mean_rape=mean(Rape), sd_rape=sd(Rape), var_rape=var(Rape), mean_poverty=mean(`Poverty Percent, All Ages`), sd_poverty=sd(`Poverty Percent, All Ages`), var_poverty=var(`Poverty Percent, All Ages`))
+#shows only Republican states, the mean arrests (for rape, murder, assault) for each state
+meanRepub<-merged_untidy%>%filter(`Political Party`=="Republican")%>%group_by(State, `Political Party`)%>%summarize(mean_crime=mean(Arrests))
+meanRepub
+#shows only Democratic states, the mean arrests (for rape, murder, assault) for each state,
+meanDemo<-merged_untidy%>%filter(`Political Party`=="Democrat")%>%group_by(State, `Political Party`)%>%summarize(mean_crime=mean(Arrests))
+meanDemo
+#summary stats for max and min arrests. Returns the Republican state with the max amount of arrests and the Republican state with the min amount of arrests 
+meanRepub%>%filter(mean_crime==max(meanRepub$mean_crime))
+meanRepub%>%filter(mean_crime==min(meanRepub$mean_crime))
+#summary stats for max and min arrests. Returns the Democratic state with the max amount of arrests and the Democratic state with the min amount of arrests 
+meanDemo%>%filter(mean_crime==max(meanDemo$mean_crime))
+meanDemo%>%filter(mean_crime==min(meanDemo$mean_crime))
+
+#correlation between arrests for murder and arrests for assaults (strong correlation)
+cor(merged$Murder,merged$Assault)
+#correlation between arrests for murder and arrests for rape (moderate correlation)
+cor(merged$Murder, merged$Rape)
+#correlation between arrests for assault and arrests for rape (moderate correlation)
+cor(merged$Assault, merged$Rape)
+#correlation between poverty level and mean of arrests for all crimes (moderate correlation)
+merged_untidy2<-merged_untidy%>%group_by(State, `Poverty Percent, All Ages`)%>%summarize(mean_crime1=mean(Arrests))
+cor(merged_untidy2$`Poverty Percent, All Ages`, merged_untidy2$mean_crime1)
+
+#counts the amount of Republican states vs the amount of Democrat states 
+merged%>%filter(`Political Party`=="Republican")%>%count()
+merged%>%filter(`Political Party`=="Democrat")%>%count()
+
+#returns the median states with the median average arrests of total crime
+merged_total%>%filter(average_arrest==median(average_arrest))
+
+```
+
+  I evaluated the different numeric and categorical variables in the dataset and attempted to analyze relationships between them. By using different commands of arrange, filter, etc., I was able to see the least to greatest amounts of arrests per crime, poverty percentage, and the associated political party of each state. With this information, the socioeconomic status and safety of each state can easily be observed through each list. In addition, I used "mutate" to average the amount of arrests per crime and made a new variable called "average arrests". This makes it easier to know where crime is the most in each state. Furthermore, the summary statistics of each variable was found in order to get a representation of the US. The data was also separated between democrat and republican states to further see if there was any differences between the two political parties. Correlations between the variables were also found. 
+  The lowest and highest level of poverty percentage for Republican states are 7.6 (New Hampshire) and 19.8 (Mississippi). The lowest and highest level of poverty percentage for Democratic states are 9.0 (Hawaii) and 18.8 (Mexico). In addition, North Dakota (republican) had the highest murder, assault, and rape arrests compared to all other states. The highest correlation of arrests was between Murder and Assault. Overall, with this information, it was noted that Republican states have generally higher arrests per crime and higher mean poverty levels of those in Democratic states. With the wrangling data above, we can further expand our knowledge on each state and their demographics.
+
+
+**Visualization**
+```{r}
+#Visualization
+#Correlation heatmap
+library(tidyverse)
+library(ggplot2)
+merged%>%select_if(is.numeric)%>%cor%>%as.data.frame%>%
+rownames_to_column%>%pivot_longer(-1)%>%
+ggplot(aes(rowname,name,fill=value))+geom_tile()+
+geom_text(aes(label=round(value,2)))+
+xlab("")+ylab("")+ scale_fill_gradient2(low="red",high="blue") + ggtitle("Correlation Between Numeric Variables")
+
+ggplot(data = merged, aes(x = Murder, y = Assault, color = `Political Party`)) +
+  geom_point(size = 3) + ggtitle("Scatterplot of Murder vs Assault between Democratic and Republican States")
+
+ggplot(merged_total, aes(x=`Poverty Percent, All Ages`, fill=`Political Party`)) + scale_fill_brewer(palette = "Pastel1")+  theme(legend.position=c(.9,.7)) + geom_density(alpha=.75) +ggtitle("Density Graph of Poverty Percent Between Democrat & Republican States")
+
+
+ggplot(merged_total, aes(x = `Political Party`, y = average_arrest, fill=`Political Party`))+
+geom_bar(stat="summary",fun.y="mean")+ scale_fill_brewer(palette = "Pastel1")+
+geom_errorbar(stat="summary", width=.5) + theme(legend.position = "none") + ggtitle("Average Arrests for Democrat vs Republican States")
+
+
+
+```
+
+  I created a correlation heat map, density graph, scatterplot, and a bar graph. The correlation heat map displayed the correlation between the numeric variables. The correlation values were color-coded in order to help visualize and easily depict the correlation value between the numeric values. The correlation heatmap showed that Murder and Assault had the highest correlation of .8, Rape and Assault had a moderate correlation of .67, and the lowest correlation of .13 between Poverty Percentage and Rape. For the scatterplot, both democrat and republican states showed a best fit linear correlation for muder and assault relationship. This tells us that no matter what political party the state identifies as, the more murder there appears to be, the more assault there appears to be. This can be further supported by the correlation of .8 from the correlation heat map. The density graph shows the poverty percent of each state and its political party. It easily depicts the skewness of the graphs. The density graphs shows us that Republican states have a general spread across poverty percent where Democratic states are higher around 10-12.5, and decreases around 15+. The bar graph shows that democratic states have generally higher arrests but because the standard error bars overlap, we cannot say this is significant information. 
+ 
+
+**Dimensionality Reduction**
+```{r}
+#Dimensionality Reduction
+library(cluster)
+pam_dat<-merged_total%>%select(Rape, Murder, Assault, `Poverty Percent, All Ages`)
+sil_width<-vector()
+for(i in 2:10){
+pam_fit <- pam(pam_dat, diss = TRUE, k = i)
+sil_width[i] <- pam_fit$silinfo$avg.width
+}
+ggplot()+geom_line(aes(x=1:10,y=sil_width))+scale_x_continuous(name="k",breaks=1:10)
+
+pam1<-pam_dat%>%pam(k=2)
+pam1
+pamclust<-pam_dat %>% mutate(cluster=as.factor(pam1$clustering))
+pamclust %>% ggplot(aes(Murder,Assault,color=cluster)) + geom_point()
+pamclust %>% group_by(cluster) %>% summarize_if(is.numeric,mean,na.rm=T)
+
+pam1$silinfo$avg.width
+
+
+library(GGally)
+pamclust%>%ggpairs(columns=1:4,aes(color=cluster))
+
+```
+
+  I found out the best k to use was 2. Setting my k equal to 2, I performed PAM clustering and 2 clusters were found distinctly (you could even say there is a good vs a bad cluster - low vs high cluster in crime). Furthermore, the ggpairs shows us the different clusters that could have been made and how the original cluster of murder and assault we made was the best cluster graph.
+
+```{R}
