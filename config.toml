@@ -20,7 +20,8 @@ theme = "hugo-sustain"
   custom_js  = []
 
 [params.social]
-  Email         = "email@example.com"
+  Email         = "christycao@utexas.edu"
+  Instagram = "christy.cao"
 
 ## Main Menu
 [[menu.main]]
