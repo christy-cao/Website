@@ -1,0 +1,75 @@
+---
+title: "resume"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+CHRISTY CAO
+		christycao@utexas.edu
+		(713) 291 – 6729
+
+EDUCATION 
+ 
+UNIVERSITY OF TEXAS AT AUSTIN, Austin, Texas				             				May 2021
+•	Bachelor of Science and Arts in Biology
+•	Certification in Ethics and Leadership in Healthcare (19 hours)
+
+ 
+WORK EXPERIENCE
+
+University of Texas at Austin, Austin, TX									
+Freshman Research Initiative Peer Mentor/ Undergraduate Assistant							January 2019- present
+•	Facilitated lab sections by leading and instructing students on lab protocols and independent research procedures 
+•	Managed lab space by purchasing stock, overseeing cleanliness of lab, and preparing for proper lab practices 
+•	Communicated with Research Educator and other peer mentors on status of lab, ongoing events amongst students in lab, and continued independent research
+•	Analyzed antifungal activity of fungi against oak wilt pathogen killing Central Texas oak trees 
+Undergraduate Research Fellow										                 May 2018-August 2018
+•	Researched, purified, and tested for natural antifungal metabolite production from different endophytic fungi for medicinal and agricultural usage through growth monitoring, fungal extraction, rotovap protocols, HPLC analysis, water stock sub-culturing, competition assays, PCR, and gel electrophoresis tests
+•	Tested for effects of different fungi presence in grape vineyard on wine production t
+Women in Natural Sciences Events Coordinator/ Program Assistant						               August 2018-May 2019
+•	Attend weekly meetings to plan upcoming events for the Women in Natural Science Program students to encourage involvement inside and outside campus activities, as well as to build a bridge between past and current students for support in college
+•	Mentor freshman in college by answering questions and providing support to help develop a supportive and encouraging network of women in Natural Sciences
+•	
+
+LEADERSHIP AND DEVELOPMENT
+
+University of Texas at Austin, Austin, TX									
+Texas Healthy Habits – Member, Secretary, President									August 2017 -present
+•	Facilitated enriched youth education with presentations over disease prevention, oral care, nutrition, and first aid 
+•	Oversaw officer board responsibilities and the organization with 50+ members 
+•	Increased outreach to local schools, non-profits, shelters 
+Mental Health Peer Educator – Peer Educator									August 2019-present
+•	Researched intersectional factors that affect mental health in college students and presented signs of distress to look out for 
+•	Hosted mental health related workshops to college organizations that taught students how to bounce back from failure and manage stress
+•	Developed a workshop over dealing with imposter syndrome, how to combat it, and how college professors can help students
+Helping Hand Home, Austin, TX  									           December 2019- present
+Volunteer				
+•	Provided support to neglected and abused children at the shelter by interacting with them, providing homework help, listening to them
+•	Helped build safe, healthy and authentic connections with children who need relational healing due to relational trauma 
+Mother’s Milk Bank, Austin, TX									              August 2019- present
+Volunteer				
+•	Worked in a lab to pasteurize milk for mothers who aren’t able to provide breast milk to babies who need benefits of human milk to survive	
+Posada Esperanza, Austin, TX										              January 2020-present
+Volunteer					
+•	Provided presentations over healthy habits to immigrant mothers and their children staying at a family shelter to escape domestic/ cultural violence 		      
+•	Supported families by driving them to their appointments and by assisting with any needed help at the shelter 
+Vietnamese Science and Culture Association, Houston, TX							            May 2019-August 2019
+Vietnamese Youth Recognition Luncheon – Co-chair
+•	Worked with and led a team to fundraise over $25,000 to host a 500-guest luncheon for Vietnamese-American who graduated as either valedictorian or salutatorian of their school by contacting businesses, brainstorming fundraising ideas, and being organized
+•	Contacted government officials, school administrations, performers, venues, donors, and honorees to bring together the event and to host it
+•	Organized the event by hosting it, planning the schedule, gathering the honorees through an orientation, and working closely with a public relations/tech team 
+Abandoned Little Angels, Houston, TX										May 2016-present
+Volunteer
+•	Collected donations at the annual non-profit gala by assisting with the silent and live auction to fundraise for orphanages and disadvantaged children in Vietnam
+
+
+ADDITIONAL INFORMATION
+
+Computer Skills: RStudio, Python, ImageJ, iMovie, Microsoft Office
+Languages: Conversant in Vietnamese
+Interests: Running, public health
+Honors and Awards: 2020 College Scholar of the University of Texas at Austin
+

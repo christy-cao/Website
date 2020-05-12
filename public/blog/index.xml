@@ -6,10 +6,22 @@
     <description>Recent content in Blogs on SDS348 Portfolio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Thu, 23 Jul 2015 21:13:14 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 11 May 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Quarantine</title>
+      <link>/blog/quarantine/</link>
+      <pubDate>Mon, 11 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/quarantine/</guid>
+      <description>Hello all,
+I am no longer going crazy in quarantine :D
+How you may ask?
+I&amp;rsquo;ve been listening to some good music, running a lot, baking different breads, listening to podcasts, working on school/ applications&amp;hellip; fun stuff!</description>
+    </item>
     
     <item>
       <title>Hello R Markdown</title>
