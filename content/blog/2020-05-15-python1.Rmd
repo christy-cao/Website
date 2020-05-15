@@ -1,0 +1,25 @@
+---
+title: python1
+author: ''
+date: '2020-05-15'
+slug: python1
+categories: []
+tags: []
+description: ''
+---
+
+```{r}
+#this is my R code
+#install.packages("reticulate", repos = "http://cran.us.r-project.org")
+library(reticulate)
+Sys.setenv(RETICULATE_PYTHON="/usr/bin/python")
+use_python("/usr/bin/python")
+course1 <- "SDS348"
+```
+
+```{python}
+#this is my python code
+course1 = "This semester I am taking computational biology, course number"
+print(course1, r.course1,".")
+
+```

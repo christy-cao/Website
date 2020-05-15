@@ -6,10 +6,19 @@
     <description>Recent content in Blogs on SDS348 Portfolio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Mon, 11 May 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 15 May 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>python1</title>
+      <link>/blog/python1/</link>
+      <pubDate>Fri, 15 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/python1/</guid>
+      <description> #this is my R code #install.packages(&amp;quot;reticulate&amp;quot;, repos = &amp;quot;http://cran.us.r-project.org&amp;quot;) library(reticulate) Sys.setenv(RETICULATE_PYTHON=&amp;quot;/usr/bin/python&amp;quot;) use_python(&amp;quot;/usr/bin/python&amp;quot;) course1 &amp;lt;- &amp;quot;SDS348&amp;quot; #this is my python code course1 = &amp;quot;This semester I am taking computational biology, course number&amp;quot; print(course1, r.course1,&amp;quot;.&amp;quot;) ## (&amp;#39;This semester I am taking computational biology, course number&amp;#39;, &amp;#39;SDS348&amp;#39;, &amp;#39;.&amp;#39;) </description>
+    </item>
     
     <item>
       <title>Quarantine</title>

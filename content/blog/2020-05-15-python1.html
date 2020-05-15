@@ -1,0 +1,22 @@
+---
+title: python1
+author: ''
+date: '2020-05-15'
+slug: python1
+categories: []
+tags: []
+description: ''
+---
+
+
+
+<pre class="r"><code>#this is my R code
+#install.packages(&quot;reticulate&quot;, repos = &quot;http://cran.us.r-project.org&quot;)
+library(reticulate)
+Sys.setenv(RETICULATE_PYTHON=&quot;/usr/bin/python&quot;)
+use_python(&quot;/usr/bin/python&quot;)
+course1 &lt;- &quot;SDS348&quot;</code></pre>
+<pre class="python"><code>#this is my python code
+course1 = &quot;This semester I am taking computational biology, course number&quot;
+print(course1, r.course1,&quot;.&quot;)</code></pre>
+<pre><code>## (&#39;This semester I am taking computational biology, course number&#39;, &#39;SDS348&#39;, &#39;.&#39;)</code></pre>

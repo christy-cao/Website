@@ -12,21 +12,12 @@
     
     
     <item>
-      <title>Python</title>
-      <link>/2020/05/12/python/</link>
-      <pubDate>Tue, 12 May 2020 00:00:00 +0000</pubDate>
+      <title>python1</title>
+      <link>/blog/python1/</link>
+      <pubDate>Fri, 15 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>/2020/05/12/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>PythonCode</title>
-      <link>/2020/05/12/pythoncode/</link>
-      <pubDate>Tue, 12 May 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/2020/05/12/pythoncode/</guid>
-      <description></description>
+      <guid>/blog/python1/</guid>
+      <description> #this is my R code #install.packages(&amp;quot;reticulate&amp;quot;, repos = &amp;quot;http://cran.us.r-project.org&amp;quot;) library(reticulate) Sys.setenv(RETICULATE_PYTHON=&amp;quot;/usr/bin/python&amp;quot;) use_python(&amp;quot;/usr/bin/python&amp;quot;) course1 &amp;lt;- &amp;quot;SDS348&amp;quot; #this is my python code course1 = &amp;quot;This semester I am taking computational biology, course number&amp;quot; print(course1, r.course1,&amp;quot;.&amp;quot;) ## (&amp;#39;This semester I am taking computational biology, course number&amp;#39;, &amp;#39;SDS348&amp;#39;, &amp;#39;.&amp;#39;) </description>
     </item>
     
     <item>
@@ -39,15 +30,6 @@
 I am no longer going crazy in quarantine :D
 How you may ask?
 I&amp;rsquo;ve been listening to some good music, running a lot, baking different breads, listening to podcasts, working on school/ applications&amp;hellip; fun stuff!</description>
-    </item>
-    
-    <item>
-      <title>Quarantine</title>
-      <link>/2020/05/11/quarantine/</link>
-      <pubDate>Mon, 11 May 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/2020/05/11/quarantine/</guid>
-      <description></description>
     </item>
     
     <item>
