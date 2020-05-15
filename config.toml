@@ -21,7 +21,8 @@ theme = "hugo-sustain"
 
 [params.social]
   Email         = "christycao@utexas.edu"
-  Twitter = "chrstycao"
+  Instagram = "christy.cao"
+  Github = "christy-cao"
 
 ## Main Menu
 [[menu.main]]

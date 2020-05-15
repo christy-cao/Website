@@ -6,10 +6,28 @@
     <description>Recent content in Posts on SDS348 Portfolio</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Mon, 11 May 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 12 May 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Python</title>
+      <link>/2020/05/12/python/</link>
+      <pubDate>Tue, 12 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/05/12/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PythonCode</title>
+      <link>/2020/05/12/pythoncode/</link>
+      <pubDate>Tue, 12 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/05/12/pythoncode/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Quarantine</title>
