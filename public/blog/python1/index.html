@@ -7,7 +7,7 @@
     <meta name="author" content="Christy Cao" />
     <meta name="description" content="Describe your website">
     <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
-    <title>python1</title>
+    <title>Coding with Python and Rstudio</title>
     <meta name="generator" content="Hugo 0.70.0" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="/css/main.css" />
@@ -56,7 +56,7 @@
       <div class="container">
         <div class="blog-post">
           <h3>
-            <strong><a href="/blog/python1/">python1</a></strong>
+            <strong><a href="/blog/python1/">Coding with Python and Rstudio</a></strong>
           </h3>
         </div>
         <div class="blog-title">
@@ -72,6 +72,8 @@
               
 
 
+<p>In this blog post, I’ll be using Python and Rstudio to code! It’s pretty cool how we can pull from both to create a functioning code.</p>
+<p><img src="/blog/2020-05-15-python1_files/sadEgg.jpg" /></p>
 <pre class="r"><code>#this is my R code
 #install.packages(&quot;reticulate&quot;, repos = &quot;http://cran.us.r-project.org&quot;)
 library(reticulate)
@@ -80,8 +82,43 @@ use_python(&quot;/usr/bin/python&quot;)
 course1 &lt;- &quot;SDS348&quot;</code></pre>
 <pre class="python"><code>#this is my python code
 course1 = &quot;This semester I am taking computational biology, course number&quot;
-print(course1, r.course1,&quot;.&quot;)</code></pre>
-<pre><code>## (&#39;This semester I am taking computational biology, course number&#39;, &#39;SDS348&#39;, &#39;.&#39;)</code></pre>
+print(course1+ &quot; &quot; +r.course1+&quot;.&quot;)</code></pre>
+<pre><code>## This semester I am taking computational biology, course number SDS348.</code></pre>
+<pre class="python"><code>classes_dict= {
+&#39;Religious Ethics&#39;:&#39;RS306C&#39;,
+&#39;Computational Biology&#39;: &#39;SDS348&#39;,
+&#39;Physics&#39;:&#39;PHY302L&#39;,
+&#39;Patients Practitioners of Care&#39;: &#39;BDP101&#39;,
+&#39;Ecology&#39;:&#39;BIO373&#39;,
+&#39;Physics Lab&#39;:&#39;PHY102N&#39;,
+&#39;Mental Health Promotion&#39;:&#39;HED105N&#39;
+}
+
+a=[]
+for key in classes_dict:
+  a.append(key) 
+a1=&quot;, &quot;.join(a)
+a1</code></pre>
+<pre><code>## &#39;Ecology, Computational Biology, Mental Health Promotion, Patients Practitioners of Care, Physics, Physics Lab, Religious Ethics&#39;</code></pre>
+<pre class="python"><code>b=[]
+for values in classes_dict.values():
+  b.append(values)
+b1= &quot;, &quot;.join(b)
+b1</code></pre>
+<pre><code>## &#39;BIO373, SDS348, HED105N, BDP101, PHY302L, PHY102N, RS306C&#39;</code></pre>
+<pre class="r"><code>#this is my R code
+library(reticulate)
+Sys.setenv(RETICULATE_PYTHON=&quot;/usr/bin/python&quot;)
+use_python(&quot;/usr/bin/python&quot;)
+statement&lt;-&quot;These are all the classes I took this semester: &quot;
+cat(c(statement,py$a1))</code></pre>
+<pre><code>## These are all the classes I took this semester:  Ecology, Computational Biology, Mental Health Promotion, Patients Practitioners of Care, Physics, Physics Lab, Religious Ethics</code></pre>
+<pre class="r"><code>statement2 &lt;- &quot;These are their corresponding course numbers: &quot;
+cat(c(statement2,py$b1))</code></pre>
+<pre><code>## These are their corresponding course numbers:  BIO373, SDS348, HED105N, BDP101, PHY302L, PHY102N, RS306C</code></pre>
+<pre class="r"><code>statement3&lt;-&quot;The picture above is from the time I dropped an egg while in quarantine!&quot;
+statement3</code></pre>
+<pre><code>## [1] &quot;The picture above is from the time I dropped an egg while in quarantine!&quot;</code></pre>
 
               <hr>
               <div class="related-posts">

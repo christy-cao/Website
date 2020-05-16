@@ -12,24 +12,26 @@
     
     
     <item>
-      <title>python1</title>
+      <title>Coding with Python and Rstudio</title>
       <link>/blog/python1/</link>
       <pubDate>Fri, 15 May 2020 00:00:00 +0000</pubDate>
       
       <guid>/blog/python1/</guid>
-      <description> #this is my R code #install.packages(&amp;quot;reticulate&amp;quot;, repos = &amp;quot;http://cran.us.r-project.org&amp;quot;) library(reticulate) Sys.setenv(RETICULATE_PYTHON=&amp;quot;/usr/bin/python&amp;quot;) use_python(&amp;quot;/usr/bin/python&amp;quot;) course1 &amp;lt;- &amp;quot;SDS348&amp;quot; #this is my python code course1 = &amp;quot;This semester I am taking computational biology, course number&amp;quot; print(course1, r.course1,&amp;quot;.&amp;quot;) ## (&amp;#39;This semester I am taking computational biology, course number&amp;#39;, &amp;#39;SDS348&amp;#39;, &amp;#39;.&amp;#39;) </description>
+      <description>In this blog post, I’ll be using Python and Rstudio to code! It’s pretty cool how we can pull from both to create a functioning code.
+#this is my R code #install.packages(&amp;quot;reticulate&amp;quot;, repos = &amp;quot;http://cran.us.r-project.org&amp;quot;) library(reticulate) Sys.setenv(RETICULATE_PYTHON=&amp;quot;/usr/bin/python&amp;quot;) use_python(&amp;quot;/usr/bin/python&amp;quot;) course1 &amp;lt;- &amp;quot;SDS348&amp;quot; #this is my python code course1 = &amp;quot;This semester I am taking computational biology, course number&amp;quot; print(course1+ &amp;quot; &amp;quot; +r.course1+&amp;quot;.&amp;quot;) ## This semester I am taking computational biology, course number SDS348.</description>
     </item>
     
     <item>
-      <title>Quarantine</title>
+      <title>Hello</title>
       <link>/blog/quarantine/</link>
       <pubDate>Mon, 11 May 2020 00:00:00 +0000</pubDate>
       
       <guid>/blog/quarantine/</guid>
       <description>Hello all,
-I am no longer going crazy in quarantine :D
-How you may ask?
-I&amp;rsquo;ve been listening to some good music, running a lot, baking different breads, listening to podcasts, working on school/ applications&amp;hellip; fun stuff!</description>
+Thanks for checking out my blog post!
+Hope you are liking my website.
+Here are some cool things I&amp;rsquo;ve been doing in quarantine: baking, running, listening to podcasts, and finding new music. I&amp;rsquo;ve made banana bread and earl grey tea yogurt bread, hit a new personal record for my mileage distance, learned a lot from Brene Brown&amp;rsquo;s podcasts, and found some really cool music on SoundCloud!!
+Hope everyone&amp;rsquo;s doing well and keeping safe!</description>
     </item>
     
     <item>
@@ -42,17 +44,6 @@ I&amp;rsquo;ve been listening to some good music, running a lot, baking differen
   Exploratory Data Analysis with Tidyverse Tools
   Modeling, Testing, and Classification
   </description>
-    </item>
-    
-    <item>
-      <title>Hello R Markdown</title>
-      <link>/blog/2015-07-23-r-rmarkdown/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
-      
-      <guid>/blog/2015-07-23-r-rmarkdown/</guid>
-      <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
-You can embed an R code chunk like this:
-summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
     </item>
     
     <item>

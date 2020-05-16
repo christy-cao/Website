@@ -1,5 +1,5 @@
 ---
-title: python1
+title: Coding with Python and Rstudio
 author: ''
 date: '2020-05-15'
 slug: python1
@@ -7,6 +7,9 @@ categories: []
 tags: []
 description: ''
 ---
+In this blog post, I'll be using Python and Rstudio to code! It's pretty cool how we can pull from both to create a functioning code. 
+
+![](/blog/2020-05-15-python1_files/sadEgg.jpg)
 
 ```{r}
 #this is my R code
@@ -20,6 +23,42 @@ course1 <- "SDS348"
 ```{python}
 #this is my python code
 course1 = "This semester I am taking computational biology, course number"
-print(course1, r.course1,".")
+print(course1+ " " +r.course1+".")
 
+classes_dict= {
+'Religious Ethics':'RS306C',
+'Computational Biology': 'SDS348',
+'Physics':'PHY302L',
+'Patients Practitioners of Care': 'BDP101',
+'Ecology':'BIO373',
+'Physics Lab':'PHY102N',
+'Mental Health Promotion':'HED105N'
+}
+
+a=[]
+for key in classes_dict:
+  a.append(key) 
+a1=", ".join(a)
+a1
+
+b=[]
+for values in classes_dict.values():
+  b.append(values)
+b1= ", ".join(b)
+b1
+
+```
+
+```{r}
+#this is my R code
+library(reticulate)
+Sys.setenv(RETICULATE_PYTHON="/usr/bin/python")
+use_python("/usr/bin/python")
+statement<-"These are all the classes I took this semester: "
+cat(c(statement,py$a1))
+statement2 <- "These are their corresponding course numbers: "
+cat(c(statement2,py$b1))
+
+statement3<-"The picture above is from the time I dropped an egg while in quarantine!"
+statement3
 ```

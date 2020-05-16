@@ -1,5 +1,5 @@
 ---
-title: Quarantine
+title: Hello
 author: Christy Cao
 date: '2020-05-11'
 slug: quarantine
@@ -10,8 +10,10 @@ description: ''
 
 Hello all,
 
-I am no longer going crazy in quarantine :D
+Thanks for checking out my blog post! 
 
-How you may ask? 
+Hope you are liking my website. 
 
-I've been listening to some good music, running a lot, baking different breads, listening to podcasts, working on school/ applications... fun stuff! 
+Here are some cool things I've been doing in quarantine: baking, running, listening to podcasts, and finding new music. I've made banana bread and earl grey tea yogurt bread, hit a new personal record for my mileage distance, learned a lot from Brene Brown's podcasts, and found some really cool music on SoundCloud!! 
+
+Hope everyone's doing well and keeping safe! 
